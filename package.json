@@ -1,6 +1,6 @@
 {
   "name": "gh-label-action",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Add or remove GitHub labels based on a condition",
   "main": "dist/index.js",
   "scripts": {
@@ -14,12 +14,15 @@
   ],
   "author": "",
   "license": "MIT",
+  "engines": {
+    "node": ">=24"
+  },
   "dependencies": {
     "@actions/core": "^1.11.1",
     "@actions/github": "^6.0.0"
   },
   "devDependencies": {
-    "@types/node": "^20.17.0",
+    "@types/node": "^24.0.0",
     "@vercel/ncc": "^0.38.3",
     "typescript": "^5.7.2"
   }

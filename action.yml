@@ -1,0 +1,19 @@
+name: 'Set Label by Condition'
+description: 'Add or remove labels on a pull request or issue based on a condition'
+branding:
+  icon: 'tag'
+  color: 'blue'
+inputs:
+  labels:
+    description: 'Comma-separated labels to add or remove'
+    required: true
+  condition:
+    description: 'Truthy (true/True/1) adds labels; otherwise removes them'
+    required: true
+  token:
+    description: 'GitHub token (defaults to github.token)'
+    required: false
+    default: ${{ github.token }}
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

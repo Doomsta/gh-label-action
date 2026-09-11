@@ -1,0 +1,28 @@
+name: Label
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dorny/paths-filter@v3
+        id: changes
+        with:
+          filters: |
+            docs:
+              - 'docs/**'
+              - '**.md'
+
+      - name: docs label
+        uses: ./
+        with:
+          labels: docs
+          condition: ${{ steps.changes.outputs.docs == 'true' }}

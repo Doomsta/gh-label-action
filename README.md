@@ -70,3 +70,7 @@ npm run build
 ```
 
 The Action entrypoint is the bundled `dist/index.js` (built with `@vercel/ncc`).
+
+## Demo
+
+Trigger docs label via PR.
